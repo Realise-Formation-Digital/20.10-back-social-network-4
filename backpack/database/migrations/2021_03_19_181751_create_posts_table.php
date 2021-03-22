@@ -15,19 +15,17 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('cityname', 45);
-            $table->unsignedTinyInteger('price-life');
-            $table->unsignedTinyInteger('internet-good');
-            $table->unsignedTinyInteger('city-save');
-            $table->string('language', 45);
-            $table->unsignedTinyInteger('apartment-easy');
-            $table->unsignedTinyInteger('distraction');
-            $table->string('country', 45);
-            $table->string('continent', 45);
-        //    $table->unsignedTinyInteger('idcomment');
-            $table->string('description', 45);
-            $table->string('photo', 45);
-        //    $table->unsignedTinyInteger('idlike');
+            $table->string('city_name', 50);
+            $table->unsignedTinyInteger('price_life');
+            $table->unsignedTinyInteger('internet_good');
+            $table->unsignedTinyInteger('city_save');
+            $table->string('language', 50);
+            $table->unsignedTinyInteger('apartment_easy');
+            $table->unsignedTinyInteger('amusement');
+            $table->string('country', 50);
+            $table->string('continent', 50);        
+            $table->text('description', 2000);
+            $table->string('image_city', 50);        
             $table->timestamps();
 
         });

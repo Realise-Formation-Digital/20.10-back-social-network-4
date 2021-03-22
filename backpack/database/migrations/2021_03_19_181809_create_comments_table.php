@@ -15,9 +15,8 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('comment', 45);
-             
-            $table->dateTime ('date');
+            $table->text('comment', 500);             
+      //      $table->dateTime ('date');
             $table->timestamps();
 
             $table->unsignedBigInteger('post_id');
@@ -26,7 +25,6 @@ class CreateCommentsTable extends Migration
                   ->on('posts')
                   ->onDelete('restrict')
                   ->onUpdate('restrict');
-
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                   ->references('id')
