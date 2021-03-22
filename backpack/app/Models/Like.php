@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Like extends Model
 {
     use HasFactory;
 
@@ -15,27 +15,18 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'city_name',
-        'price_life',
-        'internet_good',
-        'city_save',
-        'language',  
-        'apartment_easy',
-        'amusement',
-        'country',  
-        'continent',       
-        'description',
-        'image_city'      
+        'like',
+        'unlike',   
     ];
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    // protected $hidden = [
-    //     'password',
-    //     'remember_token',
-    // ];
+    protected $hidden = [
+        'user_id',
+        'post_id',
+    ];
 
     /**
      * The attributes that should be cast to native types.
@@ -51,13 +42,9 @@ class Post extends Model
      return $this->belongsToMany(User::class);
  }
 
- public function like()
+ public function post()
  { 
-     return $this->belongsToMany(Like::class); 
+     return $this->belongsToMany(Post::class); 
  }
 
- public function comment()
- { 
-     return $this->belongsToMany(Comment::class); 
- }
 }
