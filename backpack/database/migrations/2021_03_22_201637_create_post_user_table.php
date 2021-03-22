@@ -37,6 +37,6 @@ class CreatePostUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_post');
+        Schema::dropIfExists('post_user');
     }
 }
