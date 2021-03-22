@@ -21,8 +21,9 @@ class LikeFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
+        return [   
+            'like' => $this->faker->numberBetween(0, 1),
+            'unlike' => $this->faker->numberBetween(0, 1),
         ];
     }
 }

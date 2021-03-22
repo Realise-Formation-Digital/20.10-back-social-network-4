@@ -17,6 +17,7 @@ class CreateLikesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('like');
             $table->unsignedBigInteger('unlike');
+            
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                   ->references('id')

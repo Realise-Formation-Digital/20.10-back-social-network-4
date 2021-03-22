@@ -23,11 +23,10 @@ class CreatePostsTable extends Migration
             $table->unsignedTinyInteger('apartment_easy');
             $table->unsignedTinyInteger('amusement');
             $table->string('country', 50);
-            $table->string('continent', 50);        
+            $table->string('continent', 50);
             $table->text('description', 2000);
-            $table->string('image_city', 50);        
+            $table->string('image_city', 255);
             $table->timestamps();
-
         });
     }
 
