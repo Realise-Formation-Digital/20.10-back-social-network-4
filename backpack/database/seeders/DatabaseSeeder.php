@@ -30,16 +30,18 @@ class DatabaseSeeder extends Seeder
         Comment::factory()
             ->count(20)
             ->make()
-            ->each(function ($comment) use ($users) {
+            ->each(function ($comment) use ($users, $posts) {
                 $comment->user_id = $users->random()->id;
+                $comment->post_id = $posts->random()->id;
                 $comment->save();
             });
 
         Like::factory()
             ->count(20)
             ->make()
-            ->each(function ($like) use ($users) {
+            ->each(function ($like) use ($users, $posts) {
                 $like->user_id = $users->random()->id;
+                $like->post_id = $posts->random()->id;
                 $like->save();
             });
     }
