@@ -16,7 +16,6 @@ class Like extends Model
      */
     protected $fillable = [
         'like',
-        'unlike',   
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -33,18 +32,17 @@ class Like extends Model
      *
      * @var array
      */
-  //  protected $casts = [
-  //      'email_verified_at' => 'datetime',
- //   ];
+    //  protected $casts = [
+    //      'email_verified_at' => 'datetime',
+    //   ];
 
- public function user()
- {
-     return $this->belongsToMany(User::class);
- }
+    public function user()
+    {
+        return $this->belongsToMany(User::class);
+    }
 
- public function post()
- { 
-     return $this->belongsToMany(Post::class); 
- }
-
+    public function post()
+    {
+        return $this->belongsToMany(Post::class);
+    }
 }
