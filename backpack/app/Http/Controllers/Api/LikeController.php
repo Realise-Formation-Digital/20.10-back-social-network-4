@@ -62,4 +62,15 @@ class LikeController extends Controller
     {
         $like->delete();
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  Like $continent
+     * @return \Illuminate\Http\Response
+     */
+    public function getByLike(Like $post, $like)    //Get all likes 
+    {
+        return $post->where('like', $like)->get();
+    }
 }

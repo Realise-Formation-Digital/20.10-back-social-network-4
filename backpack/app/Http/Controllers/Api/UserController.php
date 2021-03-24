@@ -58,4 +58,9 @@ class UserController extends Controller
     {
         $user->delete();
     }
+
+    public function getByName(User $post, $job)
+    {
+        return $post->where('job', $job)->get();
+    }
 }
