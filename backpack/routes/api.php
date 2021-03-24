@@ -19,6 +19,12 @@ use App\Http\Controllers\Api\LikeController;
 */
 
 Route::apiResource('users', UserController::class);
+Route::get("users/job/{job}", [UserController::class, "getByName"]);
+
 Route::apiResource('posts', PostController::class);
+Route::get("posts/continent/{continent}", [PostController::class, "getByContinent"]);
+
 Route::apiResource('comments', CommentController::class);
+
 Route::apiResource('likes', LikeController::class);
+Route::get("likes/like/{like}", [LikeController::class, "getByLike"]);

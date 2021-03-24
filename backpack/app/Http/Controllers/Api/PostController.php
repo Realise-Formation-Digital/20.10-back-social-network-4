@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use PDO;
+use SebastianBergmann\Environment\Console;
 
 class PostController extends Controller
 {
@@ -57,5 +59,16 @@ class PostController extends Controller
     public function destroy(Post $post)    //DELETE = effacer un post
     {
         $post->delete();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  Post $continent
+     * @return \Illuminate\Http\Response
+     */
+    public function getByContinent(Post $post, $continent)      // GET = 
+    {
+        return $post->where('continent', $continent)->get();
     }
 }
